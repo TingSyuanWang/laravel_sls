@@ -41,8 +41,11 @@ mix.styles([
     'resources/assets/assets/layouts/layout3/css/custom.min.css',
     // END THEME LAYOUT STYLES
     // BEGIN PAGE PRICING STYLES
-    'resources/assets/assets/pages/css/pricing.min.css'
+    'resources/assets/assets/pages/css/pricing.min.css',
     // END PAGE PRICING STYLES
+    // BEGIN PAGE ERROR STYLES
+    'resources/assets/assets/pages/css/error.min.css'
+    // END PAGE ERROR STYLES
 
 ], 'public/css/libs.css');
 
