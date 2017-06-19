@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('reservation.index');
+    return view('campusTour.index');
 });

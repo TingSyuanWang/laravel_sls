@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
+mix.copy('resources/assets/assets/global/plugins/font-awesome/fonts', 'public/fonts');
 mix.copy('resources/assets/assets/global/plugins/simple-line-icons/fonts', 'public/css/fonts');
 
 mix.styles([
@@ -37,8 +38,11 @@ mix.styles([
     // BEGIN THEME LAYOUT STYLES
     'resources/assets/assets/layouts/layout3/css/layout.min.css',
     'resources/assets/assets/layouts/layout3/css/themes/default.min.css',
-    'resources/assets/assets/layouts/layout3/css/custom.min.css'
+    'resources/assets/assets/layouts/layout3/css/custom.min.css',
     // END THEME LAYOUT STYLES
+    // BEGIN PAGE PRICING STYLES
+    'resources/assets/assets/pages/css/pricing.min.css'
+    // END PAGE PRICING STYLES
 
 ], 'public/css/libs.css');
 
