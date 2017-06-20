@@ -124,7 +124,7 @@ var AppCalendar = function() {
                     }
                 },
                 events: [{
-                    title: 'All Day Event',
+                    title: 'All Day Event123',
                     start: new Date(y, m, 1),
                     backgroundColor: App.getBrandColor('yellow')
                 }, {

@@ -38,7 +38,7 @@ mix.styles([
     // BEGIN THEME LAYOUT STYLES
     'resources/assets/assets/layouts/layout3/css/layout.min.css',
     'resources/assets/assets/layouts/layout3/css/themes/default.min.css',
-    'resources/assets/assets/layouts/layout3/css/custom.min.css',
+    'resources/assets/assets/layouts/layout3/css/custom.css',
     // END THEME LAYOUT STYLES
     // BEGIN PAGE PRICING STYLES
     'resources/assets/assets/pages/css/pricing.min.css',
@@ -51,8 +51,11 @@ mix.styles([
     'resources/assets/assets/global/plugins/select2/css/select2-bootstrap.min.css',
     // END PAGE WIZARD PLUGINS
     // BEGIN PAGE SWEETALERT PLUGINS
-    'resources/assets/assets/global/plugins/bootstrap-sweetalert/sweetalert.css'
+    'resources/assets/assets/global/plugins/bootstrap-sweetalert/sweetalert.css',
     // END PAGE SWEETALERT PLUGINS
+    // BEGIN PAGE CALENDAR PLUGINS
+    'resources/assets/assets/global/plugins/fullcalendar/fullcalendar.min.css'
+    // END PAGE CALENDAR PLUGINS
 
 
 ], 'public/css/libs.css');
@@ -102,8 +105,13 @@ mix.scripts([
     // END THEME LAYOUT SCRIPTS
     // BEGIN PAGE SWEETALERT PLUGINS
     'resources/assets/assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js',
-    'resources/assets/assets/pages/scripts/ui-sweetalert.min.js'
+    'resources/assets/assets/pages/scripts/ui-sweetalert.min.js',
     // END PAGE SWEETALERT PLUGINS
+    // BEGIN PAGE CALENDAR PLUGINS
+    'resources/assets/assets/global/plugins/jquery-ui/jquery-ui.min.js',
+    'resources/assets/assets/global/plugins/fullcalendar/lang/zh-tw.js'
+    // END PAGE CALENDAR PLUGINS
+
 
 ], './public/js/libs.js');
 

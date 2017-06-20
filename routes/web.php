@@ -16,3 +16,4 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('campustour/step1', 'CampusTourStep1Controller@index')->name('campustour.step1');
+Route::get('campustour/step2', 'CampusTourStep2Controller@index')->name('campustour.step2');
