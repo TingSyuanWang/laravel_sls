@@ -5,20 +5,6 @@
 @stop
 
 @section('content')
-    <!-- BEGIN CONTENT -->
-    <div class="page-content-wrapper">
-        <!-- BEGIN CONTENT BODY -->
-        <!-- BEGIN PAGE HEAD-->
-        <div class="page-head">
-            <div class="container">
-                <!-- BEGIN PAGE TITLE -->
-                <div class="page-title">
-                    <h1>預約系統</h1>
-                </div>
-                <!-- END PAGE TITLE -->
-            </div>
-        </div>
-        <!-- END PAGE HEAD-->
         <!-- BEGIN PAGE CONTENT BODY -->
         <div class="page-content">
             <div class="container">
@@ -121,7 +107,7 @@
                                             </div>
                                             <div class="arrow-down arrow-grey"></div>
                                             <div class="price-table-footer">
-                                                <button type="button" class="btn blue btn-outline sbold uppercase price-button">我要預約</button>
+                                                <a href="{{route('campustour.step1')}}" class="btn blue btn-outline sbold uppercase price-button">我要預約</a>
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +143,7 @@
                                             </div>
                                             <div class="arrow-down arrow-grey"></div>
                                             <div class="price-table-footer">
-                                                <button type="button" class="btn red btn-outline price-button sbold uppercase">我要預約</button>
+                                                <a href="/" class="btn red btn-outline sbold uppercase price-button">我要預約</a>
                                             </div>
                                         </div>
                                     </div>
@@ -209,6 +195,4 @@
         </div>
         <!-- END PAGE CONTENT BODY -->
         <!-- END CONTENT BODY -->
-    </div>
-    <!-- END CONTENT -->
 @stop

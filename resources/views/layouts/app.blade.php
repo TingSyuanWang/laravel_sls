@@ -17,7 +17,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon-32x32.png" /> </head>
+    <link rel="shortcut icon" href="{{asset('img/favicon-32x32.png')}}" /> </head>
 <!-- END HEAD -->
 
 <body class="page-container-bg-solid">
@@ -32,7 +32,7 @@
                         <!-- BEGIN LOGO -->
                         <div class="page-logo">
                             <a href="http://sls.asia.edu.tw">
-                                <img src="img/logo_sls_1.5x.png" alt="logo" class="">
+                                <img src="{{asset('img/logo_sls_1.5x.png')}}" alt="logo" class="">
                             </a>
                         </div>
                         <!-- END LOGO -->
@@ -51,7 +51,7 @@
                         <div class="hor-menu  ">
                             <ul class="nav navbar-nav">
                                 <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
-                                    <a href="javascript:;"> 預約系統
+                                    <a href="{{route('homepage')}}"> 預約系統
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
@@ -79,8 +79,24 @@
         <div class="page-wrapper-middle">
             <!-- BEGIN CONTAINER -->
             <div class="page-container">
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <!-- BEGIN PAGE HEAD-->
+                    <div class="page-head">
+                        <div class="container">
+                            <!-- BEGIN PAGE TITLE -->
+                            <div class="page-title">
+                                <h1>@yield('title')</h1>
+                            </div>
+                            <!-- END PAGE TITLE -->
+                        </div>
+                    </div>
+                    <!-- END PAGE HEAD-->
 
-                @yield('content')
+                    @yield('content')
+
+                </div>
 
             </div>
             <!-- END CONTAINER -->
@@ -108,6 +124,8 @@
 <script src="{{asset('js/ie9.js')}}"></script>
 <![endif]-->
 <script src="{{asset('js/libs.js')}}"></script>
+
+@yield('customScript')
 </body>
 
 </html>

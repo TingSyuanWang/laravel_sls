@@ -44,8 +44,16 @@ mix.styles([
     'resources/assets/assets/pages/css/pricing.min.css',
     // END PAGE PRICING STYLES
     // BEGIN PAGE ERROR STYLES
-    'resources/assets/assets/pages/css/error.min.css'
+    'resources/assets/assets/pages/css/error.min.css',
     // END PAGE ERROR STYLES
+    // BEGIN PAGE WIZARD PLUGINS
+    'resources/assets/assets/global/plugins/select2/css/select2.min.css',
+    'resources/assets/assets/global/plugins/select2/css/select2-bootstrap.min.css',
+    // END PAGE WIZARD PLUGINS
+    // BEGIN PAGE SWEETALERT PLUGINS
+    'resources/assets/assets/global/plugins/bootstrap-sweetalert/sweetalert.css'
+    // END PAGE SWEETALERT PLUGINS
+
 
 ], 'public/css/libs.css');
 
@@ -90,8 +98,12 @@ mix.scripts([
     'resources/assets/assets/layouts/layout3/scripts/layout.min.js',
     'resources/assets/assets/layouts/layout3/scripts/demo.min.js',
     'resources/assets/assets/layouts/global/scripts/quick-sidebar.min.js',
-    'resources/assets/assets/layouts/global/scripts/quick-nav.min.js'
+    'resources/assets/assets/layouts/global/scripts/quick-nav.min.js',
     // END THEME LAYOUT SCRIPTS
+    // BEGIN PAGE SWEETALERT PLUGINS
+    'resources/assets/assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js',
+    'resources/assets/assets/pages/scripts/ui-sweetalert.min.js'
+    // END PAGE SWEETALERT PLUGINS
 
 ], './public/js/libs.js');
 
