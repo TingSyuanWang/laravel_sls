@@ -54,8 +54,11 @@ mix.styles([
     'resources/assets/assets/global/plugins/bootstrap-sweetalert/sweetalert.css',
     // END PAGE SWEETALERT PLUGINS
     // BEGIN PAGE CALENDAR PLUGINS
-    'resources/assets/assets/global/plugins/fullcalendar/fullcalendar.min.css'
+    'resources/assets/assets/global/plugins/fullcalendar/fullcalendar.min.css',
     // END PAGE CALENDAR PLUGINS
+    // BEGIN PAGE TOUCHSPIN PLUGINS
+    'resources/assets/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.css'
+    // END PAGE TOUCHSPIN PLUGINS
 
 
 ], 'public/css/libs.css');
@@ -109,9 +112,21 @@ mix.scripts([
     // END PAGE SWEETALERT PLUGINS
     // BEGIN PAGE CALENDAR PLUGINS
     'resources/assets/assets/global/plugins/jquery-ui/jquery-ui.min.js',
-    'resources/assets/assets/global/plugins/fullcalendar/lang/zh-tw.js'
+    'resources/assets/assets/global/plugins/fullcalendar/lang/zh-tw.js',
     // END PAGE CALENDAR PLUGINS
-
+    // BEGIN PAGE TOUCHSPIN PLUGINS
+    'resources/assets/assets/global/plugins/fuelux/js/spinner.min.js',
+    'resources/assets/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js',
+    'resources/assets/assets/pages/scripts/components-bootstrap-touchspin.min.js',
+    // END PAGE TOUCHSPIN PLUGINS
+    // BEGIN PAGE SWITCH PLUGINS
+    'resources/assets/assets/pages/scripts/components-bootstrap-switch.min.js',
+    // END PAGE SWITCH PLUGINS
+    // BEGIN PAGE FORM-INPUT-MASK PLUGINS
+    'resources/assets/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js',
+    'resources/assets/assets/global/plugins/jquery.input-ip-address-control-1.0.min.js',
+    'resources/assets/assets/pages/scripts/form-input-mask.js'
+    // END PAGE FORM-INPUT-MASK PLUGINS
 
 ], './public/js/libs.js');
 

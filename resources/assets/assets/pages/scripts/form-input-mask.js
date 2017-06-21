@@ -13,8 +13,8 @@ var FormInputMask = function () {
             "placeholder": "dd/mm/yyyy"
         }); //multi-char placeholder
         $("#mask_phone").inputmask("mask", {
-            "mask": "(999) 999-9999"
-        }); //specifying fn & options
+            "mask": "0999-999-999"
+        }); //specifying fn & optsions
         $("#mask_tin").inputmask({
             "mask": "99-9999999",
             placeholder: "" // remove underscores from the input mask
@@ -40,6 +40,21 @@ var FormInputMask = function () {
             placeholder: " ",
             clearMaskOnLostFocus: true
         }); //default
+        $('#mask_email').inputmask({
+            mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+            greedy: false,
+            onBeforePaste: function (pastedValue, opts) {
+                pastedValue = pastedValue.toLowerCase();
+                return pastedValue.replace("mailto:", "");
+            },
+            definitions: {
+                '*': {
+                    validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
+                    cardinality: 1,
+                    casing: "lower"
+                }
+            }
+        });
     }
 
     var handleIPAddressInput = function () {
