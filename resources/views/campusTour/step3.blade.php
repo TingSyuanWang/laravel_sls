@@ -125,7 +125,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                                     <div class="text-center">
-                                                        <a href="/" id="step1next" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></a>
+                                                        <a href="{{route('campustour.step4')}}" id="step1next" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></a>
                                                     </div>
                                                 </div>
                                                 <!-- END Portlet PORTLET-->
