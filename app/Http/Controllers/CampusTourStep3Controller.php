@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CampusTourStep3Controller extends Controller
 {
@@ -14,9 +15,9 @@ class CampusTourStep3Controller extends Controller
     public function index()
     {
         //
+        $date = Session::get('getDate');
 
-
-        return view('campusTour.step3');
+        return view('campusTour.step3', compact('date'));
     }
 
     /**
@@ -38,10 +39,6 @@ class CampusTourStep3Controller extends Controller
     public function store(Request $request)
     {
         //
-        $date = $request->input( 'date' );
-
-        return view('campusTour.step3', compact('date'))->render();
-
     }
 
     /**

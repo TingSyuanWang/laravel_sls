@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('campustour/step1', 'CampusTourStep1Controller@index')->name('campustour.step1');
 Route::get('campustour/step2', 'CampusTourStep2Controller@index')->name('campustour.step2');
-Route::get('campustour/step3', 'CampusTourStep3Controller@store')->name('campustour.step3');
+Route::get('campustour/step2getdate', 'CampusTourStep2Controller@store');
+Route::get('campustour/step3', 'CampusTourStep3Controller@index')->name('campustour.step3');
 Route::get('campustour/step4', 'CampusTourStep4Controller@index')->name('campustour.step4');
 Route::get('campustour/finish', 'CampusTourFinishController@index')->name('campustour.finish');

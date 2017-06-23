@@ -215,16 +215,17 @@
                 var findChecked = document.getElementsByClassName("fc-state-highlight")[0].className;
                 if (findChecked === 'fc-content fc-state-highlight'){
                     $.ajax({
-                        url: 'step3',
+                        url: 'step2getdate',
                         type: "get",
                         data: {date: selectedDate},
                         success: function(data){
-                            jQuery("body").html(data);
+//                            jQuery("body").html(data);
                         },
                         error: function (xhr, b, c) {
                             console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                         }
                     });
+                    window.location.href = "/campustour/step3";
                 } else {
                     swal("您尚未選擇日期","", "error");
                     return false;

@@ -39,6 +39,9 @@ class CampusTourStep2Controller extends Controller
     public function store(Request $request)
     {
         //
+        $date = $request->input( 'date' );
+
+        Session::put('getDate', $date);
 
     }
 
@@ -85,22 +88,5 @@ class CampusTourStep2Controller extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function showDate(Request $request){
-
-        $date = $request->input( 'date' );
-
-//        Session::flash('showDate', $date);
-
-//        return View::make('campusTour.step3')->with('date', $date);
-
-//        return redirect()->route('campustour.step3');
-
-//        return View::make('campusTour.step3', compact('students'));
-//        return redirect('/campusTour/step3');
-
-        return view('campusTour.step3', compact('date'));
-
     }
 }
