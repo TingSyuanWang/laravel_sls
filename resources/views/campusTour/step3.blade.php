@@ -47,10 +47,17 @@
                                                         </div>
                                                         <div class="portlet-body form">
                                                             <div class="row">
+
+
+
+
+
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                     <label><i class="fa fa-calendar-check-o"></i> 您所選擇的時間</label>
-                                                                    <input type="text" class="form-control input-lg" placeholder="2017/06/30 10:00" disabled>
+                                                                    {!! Form::open() !!}
+                                                                    {!! Form::text('campustourdate', $date, ['class' => 'form-control input-lg', 'disabled']) !!}
+                                                                    {!! Form::close() !!}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -67,7 +74,7 @@
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label>團體(代表人)名稱</label>
+                                                                        <label>團體或個人名稱</label>
                                                                         <input type="text" class="form-control input-lg" placeholder="必填">
                                                                     </div>
                                                                 </div>

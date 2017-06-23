@@ -57,7 +57,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                                     <div class="text-center">
-                                                        <a href="{{route('campustour.step3')}}" id="step1next" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></a>
+                                                        <button id="step2Submit" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></button>
                                                     </div>
                                                 </div>
                                                 <!-- END Portlet PORTLET-->
@@ -107,14 +107,14 @@
                             h = {
                                 right: 'title, prev, next',
                                 center: '',
-                                left: 'agendaDay, agendaWeek, month, today'
+                                left: 'month, today'
                             };
                         } else {
                             $('#campustourcalendar').removeClass("mobile");
                             h = {
                                 right: 'title',
                                 center: '',
-                                left: 'agendaDay, agendaWeek, month, today, prev,next'
+                                left: 'month, today, prev,next'
                             };
                         }
                     } else {
@@ -123,14 +123,14 @@
                             h = {
                                 left: 'title, prev, next',
                                 center: '',
-                                right: 'today,month,agendaWeek,agendaDay'
+                                right: 'today,month'
                             };
                         } else {
                             $('#campustourcalendar').removeClass("mobile");
                             h = {
                                 left: 'title',
                                 center: '',
-                                right: 'prev,next,today,month,agendaWeek,agendaDay'
+                                right: 'prev,next,today,month'
                             };
                         }
                     }
@@ -191,26 +191,45 @@
                             backgroundColor: App.getBrandColor('purple')
                         }],
                         eventRender: function(event, element, view){
-                            var m = moment().add(13, 'days').add(8, 'hours');
+                            var m = moment().add(13, 'days').add(15, 'hours');
                             if (event.start.format() < m.format()) {
                                 return false;
                             }
-
                         },
                         eventClick: function(calEvent, jsEvent, view) {
                             var selectedContainer = jsEvent.currentTarget.firstChild;
                             $(".fc-state-highlight").removeClass("fc-state-highlight");
                             $(selectedContainer).addClass("fc-state-highlight");
+                            window.selectedDate = moment(calEvent.start).format('YYYY/MM/DD hh:mm');
                         }
                     });
                 }
-
             };
 
         }();
 
         jQuery(document).ready(function() {
             AppCalendar.init();
+
+            $('#step2Submit').click(function(){
+                var findChecked = document.getElementsByClassName("fc-state-highlight")[0].className;
+                if (findChecked === 'fc-content fc-state-highlight'){
+                    $.ajax({
+                        url: 'step3',
+                        type: "get",
+                        data: {date: selectedDate},
+                        success: function(data){
+                            jQuery("body").html(data);
+                        },
+                        error: function (xhr, b, c) {
+                            console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                        }
+                    });
+                } else {
+                    swal("您尚未選擇日期","", "error");
+                    return false;
+                }
+            });
         });
 
     </script>

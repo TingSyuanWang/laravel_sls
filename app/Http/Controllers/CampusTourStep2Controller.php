@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
 
 class CampusTourStep2Controller extends Controller
 {
@@ -36,6 +39,7 @@ class CampusTourStep2Controller extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -81,5 +85,22 @@ class CampusTourStep2Controller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showDate(Request $request){
+
+        $date = $request->input( 'date' );
+
+//        Session::flash('showDate', $date);
+
+//        return View::make('campusTour.step3')->with('date', $date);
+
+//        return redirect()->route('campustour.step3');
+
+//        return View::make('campusTour.step3', compact('students'));
+//        return redirect('/campusTour/step3');
+
+        return view('campusTour.step3', compact('date'));
+
     }
 }

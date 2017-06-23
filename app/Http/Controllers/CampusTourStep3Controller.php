@@ -14,6 +14,8 @@ class CampusTourStep3Controller extends Controller
     public function index()
     {
         //
+
+
         return view('campusTour.step3');
     }
 
@@ -36,6 +38,10 @@ class CampusTourStep3Controller extends Controller
     public function store(Request $request)
     {
         //
+        $date = $request->input( 'date' );
+
+        return view('campusTour.step3', compact('date'))->render();
+
     }
 
     /**
