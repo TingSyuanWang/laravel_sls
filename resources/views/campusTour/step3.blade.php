@@ -62,7 +62,7 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         {!! Form::label('category', '團體或個人'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::select('category', [''=>'請選擇', 'group'=>'團體', 'person'=>'個人'], null, ['class'=>'form-control input-lg']) !!}
+                                                                        {!! Form::select('category', [''=>'請選擇', '團體'=>'團體', '個人'=>'個人'], null, ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
@@ -86,7 +86,8 @@
                                                                 <div class="col-md-2">
                                                                     <div class="form-group">
                                                                         {!! Form::label('gender', '性別'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::checkbox('gender', null, true, ['class'=>'make-switch', 'data-on-color'=>'info', 'data-off-color'=>'success', 'data-on-text'=>'男', 'data-off-text'=>'女', 'data-size'=>'large']) !!}
+                                                                        {!! Form::select('gender', [''=>'請選擇', '男'=>'男', '女'=>'女'], null, ['class'=>'form-control input-lg']) !!}
+{{--                                                                        {!! Form::checkbox('gender', null, true, ['class'=>'make-switch', 'data-on-color'=>'info', 'data-off-color'=>'success', 'data-on-text'=>'男', 'data-off-text'=>'女', 'data-size'=>'large']) !!}--}}
                                                                         {{--<input type="checkbox" class="make-switch" checked data-on-color="info" data-off-color="success" data-on-text="男" data-off-text="女" data-size="large" name="gender">--}}
                                                                     </div>
                                                                 </div>

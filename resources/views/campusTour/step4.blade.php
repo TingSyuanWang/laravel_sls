@@ -59,19 +59,19 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>團體或個人</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="團體" disabled>
+                                                                        {!! Form::text('category', $campusTourFormData['category'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>團體(代表人)名稱</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="亞洲大學" disabled>
+                                                                        {!! Form::text('categoryName', $campusTourFormData['categoryName'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>預約參觀人數</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="20" disabled>
+                                                                        {!! Form::text('reserveCount', $campusTourFormData['reserveCount'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -79,25 +79,25 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>姓名</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="Vincent Adler" disabled>
+                                                                        {!! Form::text('name', $campusTourFormData['name'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <div class="form-group">
                                                                         <label>性別</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="男" disabled>
+                                                                        {!! Form::text('gender', $campusTourFormData['gender'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label class="control-label">行動電話</label>
-                                                                    <input type="text" class="form-control input-lg" placeholder="0912-345-678" disabled>
+                                                                    {!! Form::text('phoneNumber', $campusTourFormData['phoneNumber'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
                                                                         <label>Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="asiaUniversity@asia.edu.tw" disabled>
+                                                                        {!! Form::text('email', $campusTourFormData['email'], ['class' => 'form-control input-lg', 'disabled']) !!}
                                                                     </div>
                                                                 </div>
                                                             </div>
