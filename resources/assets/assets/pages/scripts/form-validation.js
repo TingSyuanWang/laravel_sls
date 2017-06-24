@@ -107,7 +107,7 @@ var FormValidation = function () {
         // for more info visit the official plugin documentation: 
             // http://docs.jquery.com/Plugins/Validation
 
-            var form2 = $('#form_sample_2');
+            var form2 = $('#form_campustour_step3');
             var error2 = $('.alert-danger', form2);
             var success2 = $('.alert-success', form2);
 
@@ -117,13 +117,13 @@ var FormValidation = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 ignore: "",  // validate all fields including form hidden input
                 rules: {
-                    name: {
+                    categoryName: {
                         minlength: 2,
                         required: true
                     },
-                    email: {
-                        required: true,
-                        email: true
+                    name: {
+                        minlength: 2,
+                        required: true
                     },
                     email: {
                         required: true,

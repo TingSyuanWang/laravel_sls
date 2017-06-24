@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CampusTourStep3Request;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -36,9 +37,15 @@ class CampusTourStep3Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CampusTourStep3Request $request)
     {
         //
+        $campusTourFormData = $request->all();
+
+        Session::put('campusTourFormData', $campusTourFormData);
+
+        return redirect()->route('campustour.step4');
+
     }
 
     /**

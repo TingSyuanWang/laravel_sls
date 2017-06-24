@@ -38,20 +38,16 @@
                                             <div class="col-md-12">
                                                 <div class="col-md-12">
                                                     <!-- BEGIN SAMPLE FORM PORTLET-->
-                                                    <div class="portlet light ">
+                                                    <div class="portlet light">
                                                         <div class="portlet-title">
                                                             <div class="caption font-red-sunglo">
                                                                 <i class="icon-settings font-red-sunglo"></i>
                                                                 <span class="caption-subject bold uppercase">請完成以下資料的填寫，全部為必填欄位。</span>
                                                             </div>
                                                         </div>
-                                                        <div class="portlet-body form">
+                                                        <div class="portlet-body">
                                                             <div class="row">
-
-
-
-
-
+                                                                @include('includes.form_error')
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                     <label><i class="fa fa-calendar-check-o"></i> 您所選擇的時間</label>
@@ -62,79 +58,70 @@
                                                                 </div>
                                                             </div>
                                                             <div class="row">
+                                                            {!! Form::open(['method'=>'POST', 'action'=>'CampusTourStep3Controller@store']) !!}
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label>團體或個人</label>
-                                                                        <select class="form-control input-lg">
-                                                                            <option>請選擇</option>
-                                                                            <option>團體</option>
-                                                                            <option>個人</option>
-                                                                        </select>
+                                                                        {!! Form::label('category', '團體或個人'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::select('category', [''=>'請選擇', 'group'=>'團體', 'person'=>'個人'], null, ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label>團體或個人名稱</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="必填">
+                                                                        {!! Form::label('categoryName', '團體或個人名稱'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::text('categoryName', null, ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label>預約參觀人數</label>
-                                                                        <div class="input-group input-group-lg">
-                                                                            <input class="input-lg" id="touchspin_5" type="text" value="" name="demo_vertical"></div>
-                                                                        </div>
+                                                                        {!! Form::label('reserveCount', '預約參觀人數'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::text('reserveCount', null, ['class'=>'form-control input-lg', 'id'=>'touchspin_5']) !!}
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label>姓名</label>
-                                                                        <input type="text" class="form-control input-lg" placeholder="必填">
+                                                                        {!! Form::label('name', '姓名'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::text('name', null, ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <div class="form-group">
-                                                                        <label>性別</label><br>
-                                                                        <input type="checkbox" class="make-switch" checked data-on-color="info" data-off-color="success" data-on-text="男" data-off-text="女" data-size="large">
+                                                                        {!! Form::label('gender', '性別'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::checkbox('gender', null, true, ['class'=>'make-switch', 'data-on-color'=>'info', 'data-off-color'=>'success', 'data-on-text'=>'男', 'data-off-text'=>'女', 'data-size'=>'large']) !!}
+                                                                        {{--<input type="checkbox" class="make-switch" checked data-on-color="info" data-off-color="success" data-on-text="男" data-off-text="女" data-size="large" name="gender">--}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label class="control-label">行動電話</label>
-                                                                    <div>
-                                                                        <input class="form-control input-lg" id="mask_phone" type="text" />
+                                                                    <div class="form-group">
+                                                                        {!! Form::label('phoneNumber', '行動電話'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::text('phoneNumber', null, ['class'=>'form-control input-lg', 'id'=>'mask_phone']) !!}
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        <label>Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)</label>
-                                                                        <div class="input-group">
-                                                                        <span class="input-group-addon">
-                                                                            <i class="fa fa-envelope"></i>
-                                                                        </span>
-                                                                            <input type="text" class="form-control input-lg" id="mask_email" placeholder="必填"> </div>
+                                                                        {!! Form::label('email', 'Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)'), '<span class="required"> * </span>' !!}
+                                                                        {!! Form::text('email', null, ['class'=>'form-control input-lg', 'id'=>'mask_email']) !!}
                                                                     </div>
                                                                 </div>
+
+                                                                {{csrf_field()}}
+
+                                                                <br>
+                                                                <div class="form-actions">
+                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                                        <div class="text-center">
+                                                                            <a href="{{route('campustour.step2')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 上一步</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                                        <div class="text-center">
+                                                                            {{Form::button('下一步 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            {!! Form::close() !!}
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-
-
-                                                <br>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <div class="text-center">
-                                                        <a href="{{route('campustour.step2')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 上一步</a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <div class="text-center">
-                                                        <a href="{{route('campustour.step4')}}" id="step1next" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></a>
-                                                    </div>
-                                                </div>
                                                 <!-- END Portlet PORTLET-->
                                             </div>
                                         </div>

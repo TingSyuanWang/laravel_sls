@@ -127,6 +127,7 @@ mix.scripts([
     'resources/assets/assets/global/plugins/jquery.input-ip-address-control-1.0.min.js',
     'resources/assets/assets/pages/scripts/form-input-mask.js'
     // END PAGE FORM-INPUT-MASK PLUGINS
+    
 
 ], './public/js/libs.js');
 

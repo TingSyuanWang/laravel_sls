@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CampusTourStep4Controller extends Controller
 {
@@ -14,7 +15,11 @@ class CampusTourStep4Controller extends Controller
     public function index()
     {
         //
-        return view('campusTour.step4');
+        $date = Session::get('getDate');
+
+        $campusTourFormData = Session::get('campusTourFormData');
+
+        return view('campusTour.step4', compact('campusTourFormData', 'date'));
     }
 
     /**
