@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CampusTourFinishController extends Controller
 {
@@ -14,6 +15,8 @@ class CampusTourFinishController extends Controller
     public function index()
     {
         //
+        Session::flush();
+
         return view('campusTour.finish');
     }
 
