@@ -21,4 +21,5 @@ Route::get('campustour/step2getdate', 'CampusTourStep2Controller@store');
 Route::get('campustour/step3', 'CampusTourStep3Controller@index')->name('campustour.step3');
 Route::post('campustour/step3savedata', 'CampusTourStep3Controller@store');
 Route::get('campustour/step4', 'CampusTourStep4Controller@index')->name('campustour.step4');
+Route::post('campustour/step4savedata', 'CampusTourStep4Controller@store');
 Route::get('campustour/finish', 'CampusTourFinishController@index')->name('campustour.finish');

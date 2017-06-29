@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CampusTour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -40,7 +41,10 @@ class CampusTourStep4Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campustour = $request->all();
+        CampusTour::create($campustour);
+
+        return redirect('/campustour/finish');
     }
 
     /**
