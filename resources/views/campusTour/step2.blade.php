@@ -195,6 +195,11 @@
                             if (event.start.format() < m.format()) {
                                 return false;
                             }
+                            @foreach($campustourEvents as $campustourEvent)
+                            if (event.start.format('YYYY/MM/DD hh:mm') === '{{ $campustourEvent->campustourdate }}') {
+                                return false;
+                            }
+                            @endforeach
                         },
                         eventClick: function(calEvent, jsEvent, view) {
                             var selectedContainer = jsEvent.currentTarget.firstChild;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CampusTour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -17,7 +18,9 @@ class CampusTourStep2Controller extends Controller
     public function index()
     {
         //
-        return view('campusTour.step2');
+        $campustourEvents = CampusTour::all();
+
+        return view('campusTour.step2', compact('campustourEvents'));
     }
 
     /**

@@ -58,7 +58,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('category', '團體或個人'), '<span class="required"> * </span>' !!}
+                                                                        <label>團體或個人</label>
                                                                         {!! Form::text('category', $campusTourFormData['category'], ['class' => 'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
