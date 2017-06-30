@@ -21,7 +21,7 @@
                                         <i class="widget-thumb-icon bg-blue icon-layers"></i>
                                         <div class="widget-thumb-body">
                                             <span class="widget-thumb-subtitle">場次：</span>
-                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="1,293">0</span>
+                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$campustourcounts['id']}}">0</span>
                                         </div>
                                     </div>
                                 </div>

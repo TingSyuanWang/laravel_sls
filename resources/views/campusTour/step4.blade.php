@@ -50,7 +50,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('campustourdate', '您所有選擇的時間'), '<i class="fa fa-calendar-check-o"></i>' !!}
+                                                                        <label><i class="fa fa-calendar-check-o"></i> 您所選擇的時間</label>
                                                                         {!! Form::text('campustourdate', $date, ['class' => 'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
