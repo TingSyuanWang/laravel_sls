@@ -24,9 +24,12 @@ class CampusTourStep3Request extends FormRequest
     public function rules()
     {
         return [
+            'category'             =>'required',
             'categoryName'         =>'required',
             'reserveCount'         =>'required',
             'name'                 =>'required',
+            'gender'               =>'required',
+            'phoneNumber'          =>'required',
             'email'                =>'required'
         ];
     }

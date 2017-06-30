@@ -42,6 +42,7 @@ class CampusTourStep4Controller extends Controller
     public function store(Request $request)
     {
         $campustour = $request->all();
+
         CampusTour::create($campustour);
 
         return redirect('/campustour/finish');

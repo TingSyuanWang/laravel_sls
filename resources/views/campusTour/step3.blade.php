@@ -62,31 +62,31 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         {!! Form::label('category', '團體或個人'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::select('category', [''=>'請選擇', '團體'=>'團體', '個人'=>'個人'], null, ['class'=>'form-control input-lg']) !!}
+                                                                        {!! Form::select('category', [''=>'請選擇', '團體'=>'團體', '個人'=>'個人'], $campusTourFormData['category'], ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         {!! Form::label('categoryName', '團體或個人名稱'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('categoryName', null, ['class'=>'form-control input-lg']) !!}
+                                                                        {!! Form::text('categoryName', $campusTourFormData['categoryName'], ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         {!! Form::label('reserveCount', '預約參觀人數'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('reserveCount', null, ['class'=>'form-control input-lg', 'id'=>'touchspin_5']) !!}
+                                                                        {!! Form::text('reserveCount', $campusTourFormData['reserveCount'], ['class'=>'form-control input-lg', 'id'=>'touchspin_5']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         {!! Form::label('name', '姓名'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('name', null, ['class'=>'form-control input-lg']) !!}
+                                                                        {!! Form::text('name', $campusTourFormData['name'], ['class'=>'form-control input-lg']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <div class="form-group">
                                                                         {!! Form::label('gender', '性別'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::select('gender', [''=>'請選擇', '男'=>'男', '女'=>'女'], null, ['class'=>'form-control input-lg']) !!}
+                                                                        {!! Form::select('gender', [''=>'請選擇', '男'=>'男', '女'=>'女'], $campusTourFormData['gender'], ['class'=>'form-control input-lg']) !!}
 {{--                                                                        {!! Form::checkbox('gender', null, true, ['class'=>'make-switch', 'data-on-color'=>'info', 'data-off-color'=>'success', 'data-on-text'=>'男', 'data-off-text'=>'女', 'data-size'=>'large']) !!}--}}
                                                                         {{--<input type="checkbox" class="make-switch" checked data-on-color="info" data-off-color="success" data-on-text="男" data-off-text="女" data-size="large" name="gender">--}}
                                                                     </div>
@@ -94,13 +94,13 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         {!! Form::label('phoneNumber', '行動電話'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('phoneNumber', null, ['class'=>'form-control input-lg', 'id'=>'mask_phone']) !!}
+                                                                        {!! Form::text('phoneNumber', $campusTourFormData['phoneNumber'], ['class'=>'form-control input-lg', 'id'=>'mask_phone']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
                                                                         {!! Form::label('email', 'Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('email', null, ['class'=>'form-control input-lg', 'id'=>'mask_email']) !!}
+                                                                        {!! Form::text('email', $campusTourFormData['email'], ['class'=>'form-control input-lg', 'id'=>'mask_email']) !!}
                                                                     </div>
                                                                 </div>
 

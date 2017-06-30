@@ -58,7 +58,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label>團體或個人</label>
+                                                                        <label>團體(代表人)名稱</label>
                                                                         {!! Form::text('category', $campusTourFormData['category'], ['class' => 'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>

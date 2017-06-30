@@ -18,7 +18,9 @@ class CampusTourStep3Controller extends Controller
         //
         $date = Session::get('getDate');
 
-        return view('campusTour.step3', compact('date'));
+        $campusTourFormData = Session::get('campusTourFormData');
+
+        return view('campusTour.step3', compact('date', 'campusTourFormData'));
     }
 
     /**
