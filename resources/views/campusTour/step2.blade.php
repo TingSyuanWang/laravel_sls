@@ -191,8 +191,8 @@
                             backgroundColor: App.getBrandColor('purple')
                         }],
                         eventRender: function(event, element, view){
-                            var m = moment().add(13, 'days').add(15, 'hours');
-                            if (event.start.format() < m.format()) {
+                            var m = moment().add(14, 'days');
+                            if (event.start.format('YYYY/MM/DD') < m.format('YYYY/MM/DD')) {
                                 return false;
                             }
                             @foreach($campustourEvents as $campustourEvent)
