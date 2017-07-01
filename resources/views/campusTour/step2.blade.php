@@ -217,7 +217,7 @@
             AppCalendar.init();
 
             $('#step2Submit').click(function(){
-                var findChecked = document.getElementsByClassName("fc-state-highlight")[0].className;
+                var findChecked = document.getElementsByClassName("fc-state-highlight")[0];
                 if (findChecked === 'fc-content fc-state-highlight'){
                     $.ajax({
                         url: 'step2getdate',
