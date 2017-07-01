@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\CampusTour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -18,7 +19,12 @@ class CampusTourStep2Controller extends Controller
     public function index()
     {
         //
-        $campustourEvents = CampusTour::all();
+//        $campustourEvent = New CampusTour;
+
+        $currenttime = Carbon::now()->format('Y/m/d h:i');
+
+        $campustourEvents = CampusTour::where('campustourdate', '>', $currenttime)->get();
+
 
         return view('campusTour.step2', compact('campustourEvents'));
     }
