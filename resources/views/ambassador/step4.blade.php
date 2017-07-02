@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    校園導覽預約 步驟三
+    親善大使預約 步驟四
 @stop
 
 @section('content')
@@ -25,107 +25,118 @@
                                                 <div class="mt-step-number bg-white">2</div>
                                                 <div class="mt-step-title uppercase font-grey-cascade">選擇日期</div>
                                             </div>
-                                            <div class="col-md-3 mt-step-col active">
+                                            <div class="col-md-3 mt-step-col done">
                                                 <div class="mt-step-number bg-white">3</div>
                                                 <div class="mt-step-title uppercase font-grey-cascade">資料填寫</div>
                                             </div>
-                                            <div class="col-md-3 mt-step-col last">
+                                            <div class="col-md-3 mt-step-col last active">
                                                 <div class="mt-step-number bg-white">4</div>
                                                 <div class="mt-step-title uppercase font-grey-cascade">資料確認</div>
                                             </div>
                                         </div>
+                                        {!! Form::open(['method'=>'POST', 'action'=>'AmbassadorStep4Controller@store']) !!}
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="col-md-12">
                                                     <!-- BEGIN SAMPLE FORM PORTLET-->
-                                                    <div class="portlet light">
+                                                    <div class="portlet light ">
                                                         <div class="portlet-title">
                                                             <div class="caption font-red-sunglo">
                                                                 <i class="icon-settings font-red-sunglo"></i>
-                                                                <span class="caption-subject bold uppercase">請完成以下資料的填寫，全部為必填欄位。</span>
+                                                                <span class="caption-subject bold uppercase">請確定以下資料正確。</span>
                                                             </div>
                                                         </div>
-                                                        <div class="portlet-body">
+                                                        <div class="portlet-body form">
                                                             <div class="row">
-                                                                @include('includes.form_error')
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                    <label><i class="fa fa-calendar-check-o"></i> 您所選擇的時間</label>
-                                                                    {!! Form::open() !!}
-                                                                    {!! Form::text('campustourdate', $date, ['class' => 'form-control input-lg', 'disabled']) !!}
-                                                                    {!! Form::close() !!}
+                                                                        <label><i class="fa fa-calendar-check-o"></i> 您所選擇的時間</label>
+                                                                        {!! Form::text('ambassadorDate', $date, ['class' => 'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
-                                                            {!! Form::open(['method'=>'POST', 'action'=>'CampusTourStep3Controller@store']) !!}
-                                                                <div class="col-md-4">
+
+                                                                <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('category', '團體或個人'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::select('category', [''=>'請選擇', '團體'=>'團體', '個人'=>'個人'], $campusTourFormData['category'], ['class'=>'form-control input-lg']) !!}
+                                                                        <label>服務內容<span class="required"> * </span></label>
+                                                                        {!! Form::textarea('serviceContent', $ambassadorFormData['serviceContent'], ['class'=>'form-control input-lg', 'rows'=>'3', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('categoryName', '團體或個人名稱'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('categoryName', $campusTourFormData['categoryName'], ['class'=>'form-control input-lg']) !!}
+                                                                        <label>服務地點<span class="required"> * </span></label>
+                                                                        {!! Form::text('serviceLocation', $ambassadorFormData['serviceLocation'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('reserveCount', '預約參觀人數'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('reserveCount', $campusTourFormData['reserveCount'], ['class'=>'form-control input-lg', 'id'=>'touchspin_5']) !!}
+                                                                        <label>需要親善大使人數(至多10人)<span class="required"> * </span></label>
+                                                                        {!! Form::text('reserveCount', $ambassadorFormData['reserveCount'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('name', '姓名'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('name', $campusTourFormData['name'], ['class'=>'form-control input-lg']) !!}
+                                                                        <label>單位名稱<span class="required"> * </span></label>
+                                                                        {!! Form::text('categoryName', $ambassadorFormData['categoryName'], ['class'=>'form-control input-lg', 'readonly']) !!}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group">
+                                                                        <label>姓名<span class="required"> * </span></label>
+                                                                        {!! Form::text('name', $ambassadorFormData['name'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('gender', '性別'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::select('gender', [''=>'請選擇', '男'=>'男', '女'=>'女'], $campusTourFormData['gender'], ['class'=>'form-control input-lg']) !!}
-{{--                                                                        {!! Form::checkbox('gender', null, true, ['class'=>'make-switch', 'data-on-color'=>'info', 'data-off-color'=>'success', 'data-on-text'=>'男', 'data-off-text'=>'女', 'data-size'=>'large']) !!}--}}
-                                                                        {{--<input type="checkbox" class="make-switch" checked data-on-color="info" data-off-color="success" data-on-text="男" data-off-text="女" data-size="large" name="gender">--}}
+                                                                        <label>性別<span class="required"> * </span></label>
+                                                                        {!! Form::text('gender', $ambassadorFormData['gender'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('phoneNumber', '行動電話'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('phoneNumber', $campusTourFormData['phoneNumber'], ['class'=>'form-control input-lg', 'id'=>'mask_phone']) !!}
+                                                                        <label>行動電話<span class="required"> * </span></label>
+                                                                        {!! Form::text('phoneNumber', $ambassadorFormData['phoneNumber'], ['class'=>'form-control input-lg', 'id'=>'mask_phone', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        {!! Form::label('email', 'Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)'), '<span class="required"> * </span>' !!}
-                                                                        {!! Form::text('email', $campusTourFormData['email'], ['class'=>'form-control input-lg', 'id'=>'mask_email']) !!}
+                                                                        <label>Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)')<span class="required"> * </span></label>
+                                                                        {!! Form::text('email', $ambassadorFormData['email'], ['class'=>'form-control input-lg', 'id'=>'mask_email', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
-
-                                                                {{csrf_field()}}
-
-                                                                <br>
-                                                                <div class="form-actions">
-                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                                        <div class="text-center">
-                                                                            <a href="{{route('campustour.step2')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 上一步</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                                                        <div class="text-center">
-                                                                            {{Form::button('下一步 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
-                                                                        </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>聯絡時間(例假日及六、日不撥打)<span class="required"> * </span></label>
+                                                                        {!! Form::text('contactTime', $ambassadorFormData['contactTime'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                                     </div>
                                                                 </div>
-                                                            {!! Form::close() !!}
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label>其它備註<span class="required"> * </span></label>
+                                                                        {!! Form::text('message', $ambassadorFormData['message'], ['class'=>'form-control input-lg', 'readonly']) !!}
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <br>
+                                                {{csrf_field()}}
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div class="text-center">
+                                                        <a href="{{route('ambassador.step3')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 上一步</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div class="text-center">
+                                                        {{Form::button('完成預約 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
+                                                    </div>
+                                                </div>
                                                 <!-- END Portlet PORTLET-->
                                             </div>
                                         </div>
+                                        {!! Form::close() !!}
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +148,6 @@
         </div>
         <!-- END PAGE CONTENT BODY -->
         <!-- END CONTENT BODY -->
-    </div>
     <!-- END CONTENT -->
 @stop
 

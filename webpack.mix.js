@@ -117,7 +117,7 @@ mix.scripts([
     // BEGIN PAGE TOUCHSPIN PLUGINS
     'resources/assets/assets/global/plugins/fuelux/js/spinner.min.js',
     'resources/assets/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js',
-    'resources/assets/assets/pages/scripts/components-bootstrap-touchspin.min.js',
+    'resources/assets/assets/pages/scripts/components-bootstrap-touchspin.js',
     // END PAGE TOUCHSPIN PLUGINS
     // BEGIN PAGE SWITCH PLUGINS
     'resources/assets/assets/pages/scripts/components-bootstrap-switch.min.js',

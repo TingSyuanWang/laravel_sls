@@ -25,3 +25,11 @@ Route::post('campustour/step4savedata', 'CampusTourStep4Controller@store');
 Route::get('campustour/finish', 'CampusTourFinishController@index')->name('campustour.finish');
 
 // Ambassador Route
+Route::get('ambassador/step1', 'AmbassadorStep1Controller@index')->name('ambassador.step1');
+Route::get('ambassador/step2', 'AmbassadorStep2Controller@index')->name('ambassador.step2');
+Route::get('ambassador/step2getdate', 'AmbassadorStep2Controller@store');
+Route::get('ambassador/step3', 'AmbassadorStep3Controller@index')->name('ambassador.step3');
+Route::post('ambassador/step3savedata', 'AmbassadorStep3Controller@store');
+Route::get('ambassador/step4', 'AmbassadorStep4Controller@index')->name('ambassador.step4');
+Route::post('ambassador/step4savedata', 'AmbassadorStep4Controller@store');
+Route::get('ambassador/finish', 'AmbassadorFinishController@index')->name('ambassador.finish');

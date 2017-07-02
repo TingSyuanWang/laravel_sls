@@ -33,7 +33,8 @@ var ComponentsBootstrapTouchSpin = function() {
         $("#touchspin_5").TouchSpin();
 
         $("#touchspin_6").TouchSpin({
-            initval: 40
+            min: 0,
+            max: 10
         });
 
         $("#touchspin_7").TouchSpin({

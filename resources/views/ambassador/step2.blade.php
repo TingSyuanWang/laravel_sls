@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    校園導覽預約 步驟二
+    親善大使預約 步驟二
 @stop
 
 @section('content')
@@ -44,7 +44,7 @@
                                                     <div class="portlet-body">
                                                         <div class="row">
                                                             <div class="col-md-12 col-sm-12">
-                                                                <div id="campustourcalendar" class="has-toolbar"> </div>
+                                                                <div id="ambassadorcalendar" class="has-toolbar"> </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -52,7 +52,7 @@
                                                 <br>
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                                     <div class="text-center">
-                                                        <a href="{{route('campustour.step1')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 上一步</a>
+                                                        <a href="{{route('ambassador.step1')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 上一步</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
@@ -102,15 +102,15 @@
                     var h = {};
 
                     if (App.isRTL()) {
-                        if ($('#campustourcalendar').parents(".portlet").width() <= 720) {
-                            $('#campustourcalendar').addClass("mobile");
+                        if ($('#ambassadorcalendar').parents(".portlet").width() <= 720) {
+                            $('#ambassadorcalendar').addClass("mobile");
                             h = {
                                 right: 'title, prev, next',
                                 center: '',
                                 left: 'month, today'
                             };
                         } else {
-                            $('#campustourcalendar').removeClass("mobile");
+                            $('#ambassadorcalendar').removeClass("mobile");
                             h = {
                                 right: 'title',
                                 center: '',
@@ -118,15 +118,15 @@
                             };
                         }
                     } else {
-                        if ($('#campustourcalendar').parents(".portlet").width() <= 720) {
-                            $('#campustourcalendar').addClass("mobile");
+                        if ($('#ambassadorcalendar').parents(".portlet").width() <= 720) {
+                            $('#ambassadorcalendar').addClass("mobile");
                             h = {
                                 left: 'title, prev, next',
                                 center: '',
                                 right: 'today,month'
                             };
                         } else {
-                            $('#campustourcalendar').removeClass("mobile");
+                            $('#ambassadorcalendar').removeClass("mobile");
                             h = {
                                 left: 'title',
                                 center: '',
@@ -153,8 +153,8 @@
                     addEvent("第三場次 13-15");
                     addEvent("第四場次 15-17");
 
-                    $('#campustourcalendar').fullCalendar('destroy'); // destroy the calendar
-                    $('#campustourcalendar').fullCalendar({ //re-initialize the calendar
+                    $('#ambassadorcalendar').fullCalendar('destroy'); // destroy the calendar
+                    $('#ambassadorcalendar').fullCalendar({ //re-initialize the calendar
                         weekends: false,
                         minTime: "08:00:00",
                         maxTime: "17:00:00",
@@ -195,8 +195,8 @@
                             if (event.start.format('YYYY/MM/DD') < m.format('YYYY/MM/DD')) {
                                 return false;
                             }
-                            @foreach($campustourEvents as $campustourEvent)
-                            if (event.start.format('YYYY/MM/DD hh:mm') === '{{ $campustourEvent->campustourdate }}') {
+                            @foreach($ambassadorEvents as $ambassadorEvent)
+                            if (event.start.format('YYYY/MM/DD hh:mm') === '{{ $ambassadorEvent->ambassadorDate }}') {
                                 return false;
                             }
                             @endforeach
@@ -235,7 +235,7 @@
                             console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                         }
                     });
-                    window.location.href = "/campustour/step3";
+                    window.location.href = "/ambassador/step3";
                 } else {
                     swal("您尚未選擇日期","", "error");
                     return false;

@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\CampusTour;
+use App\Http\Requests\AmbassadorStep3Request;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\View;
 
-class CampusTourStep2Controller extends Controller
+class AmbassadorStep3Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +15,11 @@ class CampusTourStep2Controller extends Controller
      */
     public function index()
     {
-        $currenttime = Carbon::now()->format('Y/m/d h:i');
+        $date = Session::get('getDate');
 
-        $campustourEvents = CampusTour::where('campustourdate', '>', $currenttime)->get();
+        $ambassadorFormData = Session::get('ambassadorFormData');
 
-        return view('campusTour.step2', compact('campustourEvents'));
+        return view('ambassador.step3', compact('date', 'ambassadorFormData'));
     }
 
     /**
@@ -41,13 +38,13 @@ class CampusTourStep2Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AmbassadorStep3Request $request)
     {
-        //
-        $date = $request->input( 'date' );
+        $ambassadorFormData = $request->all();
 
-        Session::put('getDate', $date);
+        Session::put('ambassadorFormData', $ambassadorFormData);
 
+        return redirect()->route('ambassador.step4');
     }
 
     /**

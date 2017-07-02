@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    校園導覽預約 已完成預約
+    親善大使預約 已完成預約
 @stop
 
 @section('content')
@@ -42,7 +42,7 @@
                                                         <div class="portlet-title">
                                                             <div class="caption font-red-sunglo">
                                                                 <i class="icon-settings font-red-sunglo"></i>
-                                                                <span class="caption-subject bold uppercase">已完成校園導覽預約。</span>
+                                                                <span class="caption-subject bold uppercase">已完成親善大使預約。</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -52,7 +52,7 @@
                                                 <br>
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                                     <div class="text-center">
-                                                        <a href="{{route('campustour.step1')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 再次預約</a>
+                                                        <a href="{{route('ambassador.step1')}}" class="btn blue btn-block btn-lg m-icon-big"><i class="m-icon-big-swapleft m-icon-white"></i> 再次預約</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-xs-6">
@@ -74,8 +74,6 @@
         </div>
         <!-- END PAGE CONTENT BODY -->
         <!-- END CONTENT BODY -->
-    </div>
-    <!-- END CONTENT -->
 @stop
 
 @section('customScript')

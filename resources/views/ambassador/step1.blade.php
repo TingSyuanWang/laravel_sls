@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    校園導覽預約 步驟一
+    親善大使預約 步驟一
 @stop
 
 @section('content')
@@ -44,10 +44,9 @@
                                                         <div class="caption">請同意注意事項...</div>
                                                     </div>
                                                     <div class="well well-large">
-                                                        <h4>1. 請於 2 週前申請預約。</h4>
-                                                        <h4>2. 導覽地點由本校導覽人員負責規劃，不含亞洲大學現代美術館。</h4>
-                                                        <h4>3. 預約完畢後，請確認基本資料無誤後再送出。</h4>
-                                                        <h4>4. 預約成功後，將由專人與您聯繫 (工作時間 2-3 天，不含例假日及六、日)。</h4>
+                                                        <h4>1. 請於 15 天前申請預約。</h4>
+                                                        <h4>2. 預約完畢後，請確認基本資料無誤後再送出。</h4>
+                                                        <h4>3. 預約成功後，將由專人與您聯繫 (工作時間 2-3 天，不含例假日及六、日)。</h4>
                                                         <div class="form-group form-md-checkboxes">
                                                             <div class="md-checkbox-list">
                                                                 <div class="md-checkbox has-error">
@@ -69,7 +68,7 @@
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-6">
                                                         <div class="text-center">
-                                                            <a href="{{route('campustour.step2')}}" id="step1next" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></a>
+                                                            <a href="{{route('ambassador.step2')}}" id="step1next" class="btn green-jungle btn-block btn-lg m-icon-big">下一步 <i class="m-icon-big-swapright m-icon-white"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>

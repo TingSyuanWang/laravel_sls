@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    預約導覽 步驟四
+    校園導覽預約 步驟四
 @stop
 
 @section('content')
@@ -119,7 +119,7 @@
                                                 <!-- END Portlet PORTLET-->
                                             </div>
                                         </div>
-
+                                        {!! Form::close() !!}
                                     </div>
                                 </div>
                             </div>

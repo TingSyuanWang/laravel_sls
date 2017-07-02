@@ -21,7 +21,7 @@
                                         <i class="widget-thumb-icon bg-blue icon-layers"></i>
                                         <div class="widget-thumb-body">
                                             <span class="widget-thumb-subtitle">場次：</span>
-                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$campustourcounts['id']}}">0</span>
+                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$campustourCounts['id']}}">0</span>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                         <i class="widget-thumb-icon bg-red fa fa-area-chart"></i>
                                         <div class="widget-thumb-body">
                                             <span class="widget-thumb-subtitle">場次：</span>
-                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="815">0</span>
+                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$ambassadorCounts['id']}}">0</span>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                         <i class="widget-thumb-icon bg-purple icon-bar-chart"></i>
                                         <div class="widget-thumb-body">
                                             <span class="widget-thumb-subtitle">場次：</span>
-                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="5,071">0</span>
+                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="尚無服務">0</span>
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                                             </div>
                                             <div class="arrow-down arrow-grey"></div>
                                             <div class="price-table-footer">
-                                                <a href="/" class="btn red btn-outline sbold uppercase price-button">我要預約</a>
+                                                <a href="{{route('ambassador.step1')}}" class="btn red btn-outline sbold uppercase price-button">我要預約</a>
                                             </div>
                                         </div>
                                     </div>
