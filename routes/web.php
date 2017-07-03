@@ -33,3 +33,8 @@ Route::post('ambassador/step3savedata', 'AmbassadorStep3Controller@store');
 Route::get('ambassador/step4', 'AmbassadorStep4Controller@index')->name('ambassador.step4');
 Route::post('ambassador/step4savedata', 'AmbassadorStep4Controller@store');
 Route::get('ambassador/finish', 'AmbassadorFinishController@index')->name('ambassador.finish');
+
+// search
+Route::get('search', 'SearchController@index')->name('search');
+Route::post('search/show', 'SearchController@showList');
+

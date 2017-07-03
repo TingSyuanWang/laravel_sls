@@ -50,22 +50,22 @@
                         <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
                         <div class="hor-menu  ">
                             <ul class="nav navbar-nav">
-                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
                                     <a href="{{route('homepage')}}"> 預約系統
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
-                                <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  ">
+                                <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown active">
                                     <a href="{{route('search')}}"> 預約查詢
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
-                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
                                     <a href="javascript:;"> 預約修改
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
-                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
                                     <a href="javascript:;"> 預約取消
                                         <span class="arrow"></span>
                                     </a>
