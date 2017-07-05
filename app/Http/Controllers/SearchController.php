@@ -101,8 +101,20 @@ class SearchController extends Controller
         $campustourModelData = DB::table('campus_tours')->where([
             ['phoneNumber', '=', $campustourSearchData['phoneNumber']],
             ['email', '=', $campustourSearchData['email']],
-        ])->get();
+        ])->orderBy('campustourdate', 'desc')->get();
 
         return view('search.campustourSearchResultList', compact('campustourModelData'));
+    }
+
+    public function ambassadorShow(Request $request)
+    {
+        $ambassadorSearchData = $request->all();
+
+        $ambassadorModelData = DB::table('ambassadors')->where([
+            ['phoneNumber', '=', $ambassadorSearchData['phoneNumber']],
+            ['email', '=', $ambassadorSearchData['email']],
+        ])->orderBy('ambassadorDate', 'desc')->get();
+
+        return view('search.ambassadorSearchResultList', compact('ambassadorModelData'));
     }
 }

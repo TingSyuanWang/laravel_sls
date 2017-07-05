@@ -1,7 +1,7 @@
 @extends('layouts.app-search')
 
 @section('title')
-    查詢結果-校園導覽
+    查詢結果-親善大使
 @stop
 
 @section('content')
@@ -20,14 +20,14 @@
                         </div>
                         <div class="portlet-body">
                             <div class="row">
-                                @if ($campustourModelData->isEmpty())
+                                @if ($ambassadorModelData->isEmpty())
                                     <h3 class="text-center">查無任何資料！請重新查詢！</h3>
                                 @else
-                                    @foreach($campustourModelData as $campustourModelDatum)
+                                    @foreach($ambassadorModelData as $ambassadorModelDatum)
                                     <div class="col-md-4">
                                         <div class="mt-element-ribbon bg-grey-steel">
-                                            <div class="ribbon ribbon-shadow ribbon-color-success uppercase">預約時間：{{$campustourModelDatum->campustourdate}}</div>
-                                            <h4 class="ribbon-content">團體或個人名稱：{{$campustourModelDatum->categoryName}}</h4>
+                                            <div class="ribbon ribbon-shadow ribbon-color-success uppercase">預約時間：{{$ambassadorModelDatum->ambassadorDate}}</div>
+                                            <h4 class="ribbon-content">團體或個人名稱：{{$ambassadorModelDatum->categoryName}}</h4>
                                         </div>
                                     </div>
                                     @endforeach
