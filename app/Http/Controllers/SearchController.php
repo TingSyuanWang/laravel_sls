@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ambassador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
@@ -83,10 +84,25 @@ class SearchController extends Controller
         //
     }
 
-    public function showList(Request $request)
+    public function CampustourSearch()
     {
-//        $searchFormData = $request->all();
+        return view('search.campustourSearch');
+    }
 
-        return $request->all();
+    public function AmbassadorSearch()
+    {
+        return view('search.ambassadorSearch');
+    }
+
+    public function campustourShow(Request $request)
+    {
+        $campustourSearchData = $request->all();
+
+        $campustourModelData = DB::table('campus_tours')->where([
+            ['phoneNumber', '=', $campustourSearchData['phoneNumber']],
+            ['email', '=', $campustourSearchData['email']],
+        ])->get();
+
+        return view('search.campustourSearchResultList', compact('campustourModelData'));
     }
 }

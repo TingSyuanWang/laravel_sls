@@ -36,5 +36,9 @@ Route::get('ambassador/finish', 'AmbassadorFinishController@index')->name('ambas
 
 // search
 Route::get('search', 'SearchController@index')->name('search');
-Route::post('search/show', 'SearchController@showList');
+Route::get('search/campustour', 'SearchController@CampustourSearch')->name('search.campustour');
+Route::get('search/ambassador', 'SearchController@AmbassadorSearch')->name('search.ambassador');
+Route::post('search/campustour/show', 'SearchController@campustourShow');
+Route::post('search/ambassador/show', 'SearchController@ambassadorShow');
+
 
