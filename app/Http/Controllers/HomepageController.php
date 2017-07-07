@@ -19,7 +19,6 @@ class HomepageController extends Controller
 
         $ambassadorCounts = $ambassadorCount->orderBy('created_at', 'desc')->first();
 
-
         return view('homepage', compact('campustourCounts', 'ambassadorCounts'));
     }
 }

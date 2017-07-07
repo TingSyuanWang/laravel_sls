@@ -21,7 +21,11 @@
                                         <i class="widget-thumb-icon bg-blue icon-layers"></i>
                                         <div class="widget-thumb-body">
                                             <span class="widget-thumb-subtitle">場次：</span>
-                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$campustourCounts['id']}}">0</span>
+                                            @if (count($campustourCounts) === 0)
+                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="0">0</span>
+                                            @else
+                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$campustourCounts['id']}}">0</span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +39,11 @@
                                         <i class="widget-thumb-icon bg-red fa fa-area-chart"></i>
                                         <div class="widget-thumb-body">
                                             <span class="widget-thumb-subtitle">場次：</span>
-                                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$ambassadorCounts['id']}}">0</span>
+                                            @if (count($ambassadorCounts) === 0)
+                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="0">0</span>
+                                            @else
+                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$ambassadorCounts['id']}}">0</span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
