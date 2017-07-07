@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Ambassador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 class AmbassadorStep4Controller extends Controller
 {
@@ -41,6 +43,10 @@ class AmbassadorStep4Controller extends Controller
     public function store(Request $request)
     {
         $ambassador = $request->all();
+
+        $uuid1 = Uuid::uuid1()->toString();
+
+        $ambassador['uuid'] = $uuid1;
 
         Ambassador::create($ambassador);
 

@@ -40,5 +40,6 @@ Route::get('search/campustour', 'SearchController@CampustourSearch')->name('sear
 Route::get('search/ambassador', 'SearchController@AmbassadorSearch')->name('search.ambassador');
 Route::post('search/campustour/show', 'SearchController@campustourShow');
 Route::post('search/ambassador/show', 'SearchController@ambassadorShow');
+Route::get('search/campustour/edit/{id}', 'SearchController@campustourEdit')->name('search.campustour.edit');
 
 

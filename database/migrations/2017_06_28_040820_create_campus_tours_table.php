@@ -15,6 +15,7 @@ class CreateCampusToursTable extends Migration
     {
         Schema::create('campus_tours', function (Blueprint $table) {
             $table->increments('id');
+            $table->uuid('uuid');
             $table->string('campustourdate');
             $table->string('category');
             $table->string('categoryName');

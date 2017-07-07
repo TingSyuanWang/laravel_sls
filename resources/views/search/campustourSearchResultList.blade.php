@@ -27,7 +27,12 @@
                                     <div class="col-md-4">
                                         <div class="mt-element-ribbon bg-grey-steel">
                                             <div class="ribbon ribbon-shadow ribbon-color-success uppercase">預約時間：{{$campustourModelDatum->campustourdate}}</div>
-                                            <h4 class="ribbon-content">團體或個人名稱：{{$campustourModelDatum->categoryName}}</h4>
+                                            <h4 class="ribbon-content">聯絡人：{{$campustourModelDatum->categoryName}}</h4>
+                                            <div class="btn-group btn-group btn-group-justified">
+                                                <a href="#" class="btn red"> 取消 </a>
+                                                <a href="{{route('search.campustour.edit', $campustourModelDatum->id)}}" class="btn blue"> 修改 </a>
+                                                <a href="#" class="btn green"> 看更多 </a>
+                                            </div>
                                         </div>
                                     </div>
                                     @endforeach

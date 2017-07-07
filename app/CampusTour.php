@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CampusTour extends Model
 {
+
     protected $fillable = [
+        'uuid',
         'campustourdate',
         'category',
         'categoryName',
@@ -18,5 +20,4 @@ class CampusTour extends Model
         'created_at',
         'updated_at'
     ];
-    //
 }

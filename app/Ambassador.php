@@ -8,6 +8,7 @@ class Ambassador extends Model
 {
     //
     protected $fillable = [
+        'uuid',
         'ambassadorDate',
         'serviceContent',
         'serviceLocation',

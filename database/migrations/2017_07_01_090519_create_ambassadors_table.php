@@ -15,6 +15,7 @@ class CreateAmbassadorsTable extends Migration
     {
         Schema::create('ambassadors', function (Blueprint $table) {
             $table->increments('id');
+            $table->uuid('uuid');
             $table->string('ambassadorDate');
             $table->string('serviceContent');
             $table->string('serviceLocation');

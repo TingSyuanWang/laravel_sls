@@ -27,7 +27,7 @@
                                     <div class="col-md-4">
                                         <div class="mt-element-ribbon bg-grey-steel">
                                             <div class="ribbon ribbon-shadow ribbon-color-success uppercase">預約時間：{{$ambassadorModelDatum->ambassadorDate}}</div>
-                                            <h4 class="ribbon-content">團體或個人名稱：{{$ambassadorModelDatum->categoryName}}</h4>
+                                            <h4 class="ribbon-content">聯絡人：{{$ambassadorModelDatum->categoryName}}</h4>
                                         </div>
                                     </div>
                                     @endforeach

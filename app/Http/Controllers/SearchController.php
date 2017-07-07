@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ambassador;
+use App\CampusTour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -116,5 +117,21 @@ class SearchController extends Controller
         ])->orderBy('ambassadorDate', 'desc')->get();
 
         return view('search.ambassadorSearchResultList', compact('ambassadorModelData'));
+    }
+
+    public function campustourEdit($id)
+    {
+        $campustourFormData = CampusTour::findOrFail($id);
+
+        return view('search.campustour-edit', compact('campustourFormData'));
+    }
+
+    public function campustourUpdate(Request $request, $id)
+    {
+        $input = $request->all();
+
+        CampusTour::whereId($id)->first()->update($input);
+
+        return redirect('/search/campoustour');
     }
 }
