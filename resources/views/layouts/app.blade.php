@@ -56,17 +56,7 @@
                                     </a>
                                 </li>
                                 <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  ">
-                                    <a href="{{route('search')}}"> 預約查詢
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                    <a href="javascript:;"> 預約修改
-                                        <span class="arrow"></span>
-                                    </a>
-                                </li>
-                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                    <a href="javascript:;"> 預約取消
+                                    <a href="{{route('search')}}"> 預約查詢/修改/取消
                                         <span class="arrow"></span>
                                     </a>
                                 </li>

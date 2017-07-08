@@ -107,6 +107,40 @@ class SearchController extends Controller
         return view('search.campustourSearchResultList', compact('campustourModelData'));
     }
 
+    public function campustourDetail($uuid)
+    {
+        $campustourFormData = CampusTour::where('uuid', '=', $uuid)->get()->first();
+
+        return view('search.campustour-more', compact('campustourFormData'));
+    }
+
+    public function campustourEdit($uuid)
+    {
+        $campustourFormData = CampusTour::where('uuid', '=', $uuid)->get()->first();
+
+        return view('search.campustour-edit', compact('campustourFormData'));
+    }
+
+    public function campustourUpdate(Request $request, $uuid)
+    {
+        $campustourFormData = CampusTour::where('uuid', '=', $uuid)->get()->first();
+
+        $input = $request->all();
+
+        $campustourFormData->update($input);
+
+        return redirect('/search/campustour');
+    }
+
+    public function campustourDestroy(Request $request)
+    {
+        $uuid = $request->input( 'uuid' );
+
+        $campustourFormData = CampusTour::where('uuid', '=', $uuid)->get()->first();
+
+        $campustourFormData->delete();
+    }
+
     public function ambassadorShow(Request $request)
     {
         $ambassadorSearchData = $request->all();
@@ -117,21 +151,5 @@ class SearchController extends Controller
         ])->orderBy('ambassadorDate', 'desc')->get();
 
         return view('search.ambassadorSearchResultList', compact('ambassadorModelData'));
-    }
-
-    public function campustourEdit($id)
-    {
-        $campustourFormData = CampusTour::findOrFail($id);
-
-        return view('search.campustour-edit', compact('campustourFormData'));
-    }
-
-    public function campustourUpdate(Request $request, $id)
-    {
-        $input = $request->all();
-
-        CampusTour::whereId($id)->first()->update($input);
-
-        return redirect('/search/campoustour');
     }
 }
