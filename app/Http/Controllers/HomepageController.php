@@ -11,14 +11,14 @@ class HomepageController extends Controller
     //
     public function index()
     {
-        $campustourCount = New CampusTour;
+        $campustourCount = CampusTour::count();
 
-        $campustourCounts = $campustourCount->orderBy('created_at', 'desc')->first();
+//        $campustourCounts = $campustourCount->orderBy('created_at', 'desc')->first();
 
-        $ambassadorCount = New Ambassador;
+        $ambassadorCount = Ambassador::count();
 
-        $ambassadorCounts = $ambassadorCount->orderBy('created_at', 'desc')->first();
+//        $ambassadorCounts = $ambassadorCount->orderBy('created_at', 'desc')->first();
 
-        return view('homepage', compact('campustourCounts', 'ambassadorCounts'));
+        return view('homepage', compact('campustourCount', 'ambassadorCount'));
     }
 }
