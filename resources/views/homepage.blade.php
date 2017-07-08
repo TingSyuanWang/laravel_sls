@@ -24,7 +24,7 @@
                                             @if (count($campustourCounts) === 0)
                                                 <span class="widget-thumb-body-stat" data-counter="counterup" data-value="0">0</span>
                                             @else
-                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$campustourCounts['id']}}">0</span>
+                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{count($campustourCounts['id'])}}">0</span>
                                             @endif
                                         </div>
                                     </div>
@@ -42,7 +42,7 @@
                                             @if (count($ambassadorCounts) === 0)
                                                 <span class="widget-thumb-body-stat" data-counter="counterup" data-value="0">0</span>
                                             @else
-                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{$ambassadorCounts['id']}}">0</span>
+                                                <span class="widget-thumb-body-stat" data-counter="counterup" data-value="{{count($ambassadorCounts['id'])}}">0</span>
                                             @endif
                                         </div>
                                     </div>
