@@ -129,7 +129,8 @@ class SearchController extends Controller
 
         $campustourFormData->update($input);
 
-        return redirect('/search/campustour');
+        return \Redirect::route('search.campustour.detail', [$uuid]);
+
     }
 
     public function campustourDestroy(Request $request)
@@ -152,4 +153,41 @@ class SearchController extends Controller
 
         return view('search.ambassadorSearchResultList', compact('ambassadorModelData'));
     }
+
+    public function ambassadorDetail($uuid)
+    {
+        $ambassadorFormData = Ambassador::where('uuid', '=', $uuid)->get()->first();
+
+        return view('search.ambassador-more', compact('ambassadorFormData'));
+    }
+
+    public function ambassadorEdit($uuid)
+    {
+        $ambassadorFormData = Ambassador::where('uuid', '=', $uuid)->get()->first();
+
+        return view('search.ambassador-edit', compact('ambassadorFormData'));
+    }
+
+    public function ambassadorUpdate(Request $request, $uuid)
+    {
+        $ambassadorFormData = Ambassador::where('uuid', '=', $uuid)->get()->first();
+
+        $input = $request->all();
+
+        $ambassadorFormData->update($input);
+
+        return \Redirect::route('search.ambassador.detail', [$uuid]);
+
+    }
+
+    public function ambassadorDestroy(Request $request)
+    {
+        $uuid = $request->input( 'uuid' );
+
+        $ambassadorFormData = Ambassador::where('uuid', '=', $uuid)->get()->first();
+
+        $ambassadorFormData->delete();
+    }
+
+
 }

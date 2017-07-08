@@ -1,7 +1,7 @@
 @extends('layouts.app-search')
 
 @section('title')
-    校園導覽預約內容
+    親善大使預約內容
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
                     <div class="col-md-12">
                         <div class="portlet light portlet-fit ">
                             <div class="portlet-body">
-                                {!! Form::model($campustourFormData, ['method'=>'PATCH', 'action'=>['SearchController@index', $campustourFormData->uuid]]) !!}
+                                {!! Form::model($ambassadorFormData, ['method'=>'PATCH', 'action'=>['SearchController@index', $ambassadorFormData->uuid]]) !!}
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="col-md-12">
@@ -32,53 +32,70 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label><i class="fa fa-calendar-check-o"></i> 您所選擇的時間</label>
-                                                                {!! Form::text('campustourdate', $campustourFormData['campustourdate'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                {!! Form::text('ambassadorDate', $ambassadorFormData['ambassadorDate'], ['class' => 'form-control input-lg', 'readonly']) !!}
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-4">
+
+                                                        <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>團體(代表人)名稱</label>
-                                                                {!! Form::text('category', $campustourFormData['category'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                <label>服務內容<span class="required"> * </span></label>
+                                                                {!! Form::textarea('serviceContent', $ambassadorFormData['serviceContent'], ['class'=>'form-control input-lg', 'rows'=>'3', 'readonly']) !!}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>團體(代表人)名稱</label>
-                                                                {!! Form::text('categoryName', $campustourFormData['categoryName'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                <label>服務地點<span class="required"> * </span></label>
+                                                                {!! Form::text('serviceLocation', $ambassadorFormData['serviceLocation'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>預約參觀人數</label>
-                                                                {!! Form::text('reserveCount', $campustourFormData['reserveCount'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                <label>需要親善大使人數(至多10人)<span class="required"> * </span></label>
+                                                                {!! Form::text('reserveCount', $ambassadorFormData['reserveCount'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>姓名</label>
-                                                                {!! Form::text('name', $campustourFormData['name'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                <label>單位名稱<span class="required"> * </span></label>
+                                                                {!! Form::text('categoryName', $ambassadorFormData['categoryName'], ['class'=>'form-control input-lg', 'readonly']) !!}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label>姓名<span class="required"> * </span></label>
+                                                                {!! Form::text('name', $ambassadorFormData['name'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-group">
-                                                                <label>性別</label>
-                                                                {!! Form::text('gender', $campustourFormData['gender'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                <label>性別<span class="required"> * </span></label>
+                                                                {!! Form::text('gender', $ambassadorFormData['gender'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label class="control-label">行動電話</label>
-                                                            {!! Form::text('phoneNumber', $campustourFormData['phoneNumber'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                            <div class="form-group">
+                                                                <label>行動電話<span class="required"> * </span></label>
+                                                                {!! Form::text('phoneNumber', $ambassadorFormData['phoneNumber'], ['class'=>'form-control input-lg', 'id'=>'mask_phone', 'readonly']) !!}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label>Email</label>
-                                                                {!! Form::text('email', $campustourFormData['email'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                <label>Email (google 帳戶請使用 gmail.com，yahoo 帳戶請使用 yahoo.com.tw)')<span class="required"> * </span></label>
+                                                                {!! Form::text('email', $ambassadorFormData['email'], ['class'=>'form-control input-lg', 'id'=>'mask_email', 'readonly']) !!}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>聯絡時間(例假日及六、日不撥打)<span class="required"> * </span></label>
+                                                                {!! Form::text('contactTime', $ambassadorFormData['contactTime'], ['class'=>'form-control input-lg', 'readonly']) !!}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>其它備註<span class="required"> * </span></label>
+                                                                {!! Form::text('message', $ambassadorFormData['message'], ['class'=>'form-control input-lg', 'readonly']) !!}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -99,7 +116,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="text-center">
-                                                <a href="{{route('search.campustour.edit', $campustourFormData['uuid'])}}" class="btn blue btn-block btn-lg m-icon-big"><i class="fa fa-pencil"></i> 編輯預約</a>
+                                                <a href="{{route('search.ambassador.edit', $ambassadorFormData['uuid'])}}" class="btn blue btn-block btn-lg m-icon-big"><i class="fa fa-pencil"></i> 編輯預約</a>
                                             </div>
                                         </div>
                                         <!-- END Portlet PORTLET-->
@@ -135,10 +152,10 @@
             function (isConfirm) {
                 if (!isConfirm) return;
                 $.ajax({
-                    url: "{{url('/search/campustour/delete')}}",
+                    url: "{{url('/search/ambassador/delete')}}",
                     type: "get",
                     data: {
-                        uuid: '{{$campustourFormData->uuid}}'
+                        uuid: '{{$ambassadorFormData->uuid}}'
                     },
                     dataType: "html",
                     success: function () {

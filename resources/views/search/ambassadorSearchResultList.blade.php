@@ -28,6 +28,9 @@
                                         <div class="mt-element-ribbon bg-grey-steel">
                                             <div class="ribbon ribbon-shadow ribbon-color-success uppercase">預約時間：{{$ambassadorModelDatum->ambassadorDate}}</div>
                                             <h4 class="ribbon-content">聯絡人：{{$ambassadorModelDatum->categoryName}}</h4>
+                                            <div class="btn-group btn-group btn-group-justified">
+                                                <a href="{{route('search.ambassador.detail', $ambassadorModelDatum->uuid)}}" class="btn blue"> 看更多 </a>
+                                            </div>
                                         </div>
                                     </div>
                                     @endforeach
