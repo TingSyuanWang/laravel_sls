@@ -107,7 +107,7 @@
                                         <div class="col-md-3"></div>
                                         <div class="col-md-6">
                                             <div class="text-center">
-                                                {{Form::button('修改預約內容 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
+                                                {{Form::button('修改預約內容 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'id' => 'submitButton', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
                                             </div>
                                         </div>
                                         <div class="col-md-3"></div>
@@ -129,5 +129,16 @@
 @stop
 
 @section('customScript')
-
+<script>
+    $('#submitButton').click(function(){
+        var countValue = $('#touchspin_6').val();
+        var FormDataCount = "{{$ambassadorFormData['reserveCount']}}";
+        if (countValue > FormDataCount){
+            swal("需要親善大使人數過多！", "您所需要親善大使人數不能超過一開始預約的人數", "error");
+            return false;
+        } else {
+            return true;
+        }
+    });
+</script>
 @stop

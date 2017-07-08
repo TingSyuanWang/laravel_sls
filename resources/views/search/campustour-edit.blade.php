@@ -52,7 +52,7 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>預約參觀人數</label>
-                                                                {!! Form::text('reserveCount', $campustourFormData['reserveCount'], ['class' => 'form-control input-lg', 'readonly']) !!}
+                                                                {!! Form::text('reserveCount', $campustourFormData['reserveCount'], ['class'=>'form-control input-lg', 'id'=>'touchspin_5']) !!}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -90,7 +90,7 @@
                                         <div class="col-md-3"></div>
                                         <div class="col-md-6">
                                             <div class="text-center">
-                                                {{Form::button('修改預約內容 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
+                                                {{Form::button('修改預約內容 <i class="m-icon-big-swapright m-icon-white"></i>', array('type' => 'submit', 'id'=>'submitButton', 'class' => 'btn green-jungle btn-block btn-lg m-icon-big'))}}
                                             </div>
                                         </div>
                                         <div class="col-md-3"></div>
@@ -112,5 +112,16 @@
 @stop
 
 @section('customScript')
-
+<script>
+    $('#submitButton').click(function(){
+        var countValue = $('#touchspin_5').val();
+        var FormDataCount = "{{$campustourFormData['reserveCount']}}";
+        if (countValue > FormDataCount){
+            swal("預約參觀人數過多！", "您所選擇的預約人數不能超過一開始預約的人數", "error");
+            return false;
+        } else {
+            return true;
+        }
+    });
+</script>
 @stop
