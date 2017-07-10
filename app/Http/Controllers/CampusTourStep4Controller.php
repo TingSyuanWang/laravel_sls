@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CampusTour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
@@ -50,6 +51,14 @@ class CampusTourStep4Controller extends Controller
         $campustour['uuid'] = $uuid1;
 
         CampusTour::create($campustour);
+
+        $name = $request->input('name');
+        $campustourDate = $request->input('campustourdate');
+
+        Mail::send('emails.campustourFinish', ['name' => $name, 'campustourDate' => $campustourDate], function($message) use($request)
+        {
+            $message->to($request->email)->subject('【溫馨提醒】亞洲大學服務學習組-校園導覽預約預約成功！');
+        });
 
         return redirect('/campustour/finish');
     }

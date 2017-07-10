@@ -41,7 +41,7 @@ var FormInputMask = function () {
             clearMaskOnLostFocus: true
         }); //default
         $('#mask_email').inputmask({
-            mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+            mask: "*{1,30}[.*{1,30}][.*{1,30}][.*{1,20}]@*{1,20}[.*{2,10}][.*{1,5}]",
             greedy: false,
             onBeforePaste: function (pastedValue, opts) {
                 pastedValue = pastedValue.toLowerCase();
