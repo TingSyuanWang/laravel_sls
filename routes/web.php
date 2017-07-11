@@ -42,7 +42,7 @@ Route::post('search/campustour/show', 'SearchController@campustourShow');
 Route::get('search/campustour/detail/{uuid}', 'SearchController@campustourDetail')->name('search.campustour.detail');
 Route::get('search/campustour/edit/{uuid}', 'SearchController@campustourEdit')->name('search.campustour.edit');
 Route::patch('search/campustour/update/{uuid}', 'SearchController@campustourUpdate')->name('search.campustour.update');
-Route::get('search/campustour/delete', 'SearchController@ambassadorDestroy')->name('search.campustour.delete');
+Route::get('search/campustour/delete', 'SearchController@campustourDestroy')->name('search.campustour.delete');
 Route::post('search/ambassador/show', 'SearchController@ambassadorShow');
 Route::get('search/ambassador/detail/{uuid}', 'SearchController@ambassadorDetail')->name('search.ambassador.detail');
 Route::get('search/ambassador/edit/{uuid}', 'SearchController@ambassadorEdit')->name('search.ambassador.edit');
