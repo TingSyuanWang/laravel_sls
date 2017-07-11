@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ambassador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
@@ -49,6 +50,14 @@ class AmbassadorStep4Controller extends Controller
         $ambassador['uuid'] = $uuid1;
 
         Ambassador::create($ambassador);
+
+        $name = $request->input('name');
+        $ambassadorDate = $request->input('ambassadorDate');
+
+        Mail::send('emails.ambassadorFinish', ['name' => $name, 'ambassadorDate' => $ambassadorDate], function($message) use($request)
+        {
+            $message->to($request->email)->subject('【溫馨提醒】亞洲大學服務學習組-校園導覽預約預約成功！');
+        });
 
         return redirect('/ambassador/finish');
     }
