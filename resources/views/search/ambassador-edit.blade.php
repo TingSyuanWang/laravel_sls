@@ -132,7 +132,7 @@
 <script>
     $('#submitButton').click(function(){
         var countValue = $('#touchspin_6').val();
-        var FormDataCount = "{{$ambassadorFormData['reserveCount']}}";
+        var FormDataCount = {{$ambassadorFormData['reserveCount']}};
         if (countValue > FormDataCount){
             swal("需要親善大使人數過多！", "您所需要親善大使人數不能超過一開始預約的人數", "error");
             return false;

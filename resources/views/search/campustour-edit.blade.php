@@ -115,7 +115,7 @@
 <script>
     $('#submitButton').click(function(){
         var countValue = $('#touchspin_5').val();
-        var FormDataCount = "{{$campustourFormData['reserveCount']}}";
+        var FormDataCount = {{$campustourFormData['reserveCount']}};
         if (countValue > FormDataCount){
             swal("預約參觀人數過多！", "您所選擇的預約人數不能超過一開始預約的人數", "error");
             return false;
